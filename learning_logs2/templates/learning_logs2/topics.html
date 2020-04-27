@@ -5,14 +5,17 @@
 {% endblock page_header %}
 
 {% block content %}
-  <ul>
-    {% for topic in topics %}
-      <li><h4><a href="{% url 'learning_logs2:topic' topic.id %}">{{ topic }}</a>
-      </h4></li>
-    {% empty %}
-      <li><h4>No topics have been added yet.</h4></li>
-    {% endfor %}
-  </ul>
+
+  {% for topic in topics %}
+    <div class="card mb-3">
+      <h4 class="card-header">
+        <a href="{% url 'learning_logs2:topic' topic.id %}">{{ topic }}</a>
+        <small><a href="{% url 'learning_logs2:del_topic' topic.id %}" style="margin-left: 15px;">delete</a></small>
+      </h4>
+    </div>
+  {% empty %}
+    <h5>No topics have been added yet.</h5>
+  {% endfor %}
 
   <h5><a href="{% url 'learning_logs2:new_topic' %}">Add a new topic</a></h5>
 

@@ -14,9 +14,12 @@ urlpatterns = [
 	path('topics/<int:topic_id>/', views.topic, name='topic'),
 	# Page for adding a new topic
 	path('new_topic/', views.new_topic, name='new_topic'),
+	# Page for deleting a single topic.
+	path('del_topic/<int:topic_id>/', views.del_topic, name='del_topic'),
 	# Page for adding a new entry
 	path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
 	# Page for editing an entry.
 	path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
-
+	# Page for deleting an entry.
+	path('del_entry/<int:entry_id>/', views.del_entry, name='del_entry'),
 ]

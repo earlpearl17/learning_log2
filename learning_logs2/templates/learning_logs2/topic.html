@@ -12,7 +12,8 @@
     <div class="card mb-3">
       <h4 class="card-header">
         {{ entry.date_added|date:'M d, Y H:i' }}
-        <small><a href="{% url 'learning_logs2:edit_entry' entry.id %}">edit entry</a></small>
+        <small><a href="{% url 'learning_logs2:edit_entry' entry.id %}">edit</a></small>
+        <small><a href="{% url 'learning_logs2:del_entry' entry.id %}">delete</a></small>
       </h4>
       <div class="card-body">
         {{ entry.text|linebreaks }}
